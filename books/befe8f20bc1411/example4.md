@@ -1,12 +1,10 @@
 ---
-title: "pygame 基礎編"
+title: "Pygame 基礎編"
 ---
 
 ## Pygame の導入
 
-いよいよ pygame を利用してゲームを作成します。
-
-最初に以下を実行してみましょう。
+いよいよ Pygame を利用してゲームを作成します。最初に以下を実行してみましょう。
 
 ## 最初に使うコード
 
@@ -42,15 +40,13 @@ if __name__=="__main__":
     main()
 ```
 
-これで黒い画面に赤い色の円が作成されます。
-
-まずは上記のコードで何をやっているかを一つ一つ意識してみましょう。
+これで黒い画面に赤い色の円が作成されます。まずは上記のコードで何をやっているかを一つ一つ意識してみましょう。
 
 ![スクリーンショット 2025-01-02 17.07.58](/Users/ichinomiya/Library/Application Support/typora-user-images/スクリーンショット 2025-01-02 17.07.58.png)
 
 そこで、以下の問題を解いてみましょう
 
-1. 円の色を変えるにはどうしますか ？　まずは白色にしてみましょう。
+1. 円の色を変えるにはどうしますか？まずは白色にしてみましょう。
 2. 画面のサイズを変えるにはどうしますか？
 3. 背景の色を変えるにはどうしますか？好きな色に変えてみましょう。
 4. event という変数は何のクラスのインスタンスでしょうか？
@@ -59,13 +55,11 @@ if __name__=="__main__":
 
 ### ものを動かす
 
-次にキーボードでものを動かすことを考えます。
-
-このとき大事なのは、サンプルコードをすぐに見るのではなくて自分でドキュメントを読むことです。
+次にキーボードでものを動かすことを考えます。このとき大事なのは、サンプルコードをすぐに見るのではなくて自分でドキュメントを読むことです。
 
 キーボードで動かすので、ドキュメントの Key を見てみます。
 
-https://westplain.sakura.ne.jp/translate/pygame/Key.cgi
+[pygame.key.get_pressed ドキュメント](https://westplain.sakura.ne.jp/translate/pygame/Key.cgi)
 
 `pygame.key.get_pressed`　で全てのキーの入力状態を取得できるとあります。
 
@@ -88,7 +82,7 @@ K_LEFT                left arrow
 
 ここで Keys[K_UP]がどのような値になるかをみてみましょう。
 
-```
+```python
 from pygame.locals import *
 import pygame
 import sys
@@ -124,20 +118,13 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
-上記のコードを実行すると、ターミナルに false が表示され続けます。
+上記のコードを実行すると、ターミナルに false が表示され続けます。しかし、上矢印を押すと、true に変わるはずです。このようにキーボードが押されているかどうかが、keys という配列で取得されているのです。
 
-しかし、上矢印を押すと、true に変わるはずです。
+これを元に赤い円を動かすコードを書いてみましょう。書き終わったら、以下のお手本のコードと見比べてみてください。
 
-このようにキーボードが押されているかどうかが、keys という配列で取得されているのです。
-
-これを元に赤い円を動かすコードを書いてみましょう。
-
-書き終わったら、以下のお手本のコードと見比べてみてください。
-
-```
+```python
 from pygame.locals import *
 import pygame
 import sys
@@ -190,40 +177,31 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ### 画像を表示する
 
-円は動かせましたが、ゲームを作るなら自分の好きなものを動かしたいですね。
-
-自分の好きな画像を表示してそれを動かすコードを作成してみましょう。
+円は動かせましたが、ゲームを作るなら自分の好きなものを動かしたいですね。自分の好きな画像を表示してそれを動かすコードを作成してみましょう。
 
 画像の読み込みをしたいのでドキュメントの image の部分を参考にします。
 
-https://westplain.sakura.ne.jp/translate/pygame/Image.cgi
+[pygame.image.load ドキュメント](https://westplain.sakura.ne.jp/translate/pygame/Image.cgi)
 
-```
+```python
 pygame.image.load("images/character.png")
 ```
 
-上記のコードで画像を読み込むことができます。
+上記のコードで画像を読み込むことができます。この時、画像の**パス** に気をつけてください。相対パスで指定します。相対パスが何かわからない人は**コンピュータの基礎**をもう一度学習してください。
 
-この時、画像の**パス** に気をつけてください。相対パスで指定します。
-
-相対パスが何かわからない人は**コンピュータの基礎**をもう一度学習してください。
-
-ドキュメントを読むと、`pygame.image.load("images/character.png")`の返り値は Surface クラスです。
-
-`   screen = pygame.display.set_mode((400, 330))`で定義される screen も Surface クラスでした。
+ドキュメントを読むと、`pygame.image.load("images/character.png")`の返り値は Surface クラスです。`screen = pygame.display.set_mode((400, 330))`で定義される screen も Surface クラスでした。
 
 Surface のドキュメントを読むと、画像を他の画像上に描写するには `Surface.blit` を用いればいいことがわかります。
 
-https://westplain.sakura.ne.jp/translate/pygame/Surface.cgi
+[pygame.Surface.blit ドキュメント](https://westplain.sakura.ne.jp/translate/pygame/Surface.cgi)
 
 そこで`screen`に自分で用意した画像を貼り付けた上で screen を表示します。
 
-```
+```python
 from pygame.locals import *
 import pygame
 import sys
@@ -283,15 +261,14 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ## 参考ドキュメント
 
 英語版のドキュメント
 
-https://www.pygame.org/docs/
+[pygame 英語版ドキュメント](https://www.pygame.org/docs/)
 
 日本語化されたドキュメント
 
-https://westplain.sakura.ne.jp/translate/pygame/
+[pygame 日本語版ドキュメント](https://westplain.sakura.ne.jp/translate/pygame/)
