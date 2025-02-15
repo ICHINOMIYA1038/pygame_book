@@ -1,0 +1,11 @@
+title: "pygame入門"
+summary: "pygameを使ってゲームを作ってみよう"
+topics: ["pygame", "ゲーム制作"]
+published: false
+price: 0 # 有料の場合200〜5000
+# 本に含めるチャプターを順番に並べましょう
+chapters:
+  - example1
+  - example2
+  - example3
+  - example4
