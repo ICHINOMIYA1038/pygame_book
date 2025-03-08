@@ -332,20 +332,23 @@ async def main():
 
 ```python
 async def slow_task():
-try:
-print("タスク開始")
-await asyncio.sleep(5)
-print("タスク終了")
-except asyncio.CancelledError:
-print("タスクがキャンセルされました！")
+    try:
+        print("タスク開始")
+        await asyncio.sleep(5)
+        print("タスク終了")
+    except asyncio.CancelledError:
+        print("タスクがキャンセルされました！")
 
 async def main():
-task = asyncio.create_task(slow_task())
-await asyncio.sleep(2)
-task.cancel() # タスクをキャンセル
-await task # キャンセル結果を待つ
+    task = asyncio.create_task(slow_task())
+    await asyncio.sleep(2)
+    task.cancel()  # タスクをキャンセル
+    await task  # キャンセル結果を待つ
 
 asyncio.run(main())
+```
+
+```
 実行結果:
 タスク開始
 タスクがキャンセルされました！
