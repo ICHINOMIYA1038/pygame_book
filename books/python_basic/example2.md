@@ -149,9 +149,25 @@ for i in range(10):
     print(i)
 ```
 
+for i in range(3, 10) なら、3 から 9 までの数字を繰り返し処理を行います。
+
+```python
+for i in range(3, 10):
+    print(i)
+```
+
+for i in range(3, 10, 2) なら、3 から 9 までの数字を 2 ずつ増やしながら繰り返し処理を行います。
+
+```python
+for i in range(3, 10, 2):
+    print(i)
+```
+
 ### 関数とは
 
 関数は、プログラムの中で処理をまとめておくためのものです。
+引数とは、関数に渡すデータのことです。
+引数はない場合もあります。
 
 ```python
 def 関数名(引数):
@@ -172,6 +188,22 @@ hello()
 ```
 実行結果:
 Hello
+```
+
+引数がある場合
+
+```python
+def hello(name):
+    print("Hello" + name)
+```
+
+```python
+hello("太郎")
+```
+
+```
+実行結果:
+Hello太郎
 ```
 
 ### 組み込み関数
