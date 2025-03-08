@@ -254,8 +254,6 @@ print(numbers.index(30))
 print(numbers.index(50)) # ValueError: 50 is not in list
 ```
 
-エラーになる例:
-
 応用例: 配列とループ、条件分岐を組み合わせる
 
 ```python
