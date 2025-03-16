@@ -8,6 +8,12 @@
 zenn new:book
 ```
 
+# 検証環境の立ち上げ
+
+```bash
+npx zenn preview # プレビュー開始
+```
+
 ## slag の付け方ルール
 
 https://zenn.dev/zenn/articles/what-is-slug
