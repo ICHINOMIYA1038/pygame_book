@@ -5,7 +5,7 @@
 # 新しい book の作成
 
 ```bash
-zenn new:book
+npx zenn new:book
 ```
 
 # 検証環境の立ち上げ
