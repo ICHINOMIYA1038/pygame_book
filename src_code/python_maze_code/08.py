@@ -5,12 +5,12 @@ import os
 import math
 
 # サウンドファイルのパスを設定
-SOUND_DIR = "sounds"
+SOUND_DIR = "assets/sounds"
 if not os.path.exists(SOUND_DIR):
     os.makedirs(SOUND_DIR)
 
 # タイルサイズ
-TILE_SIZE = 32
+TILE_SIZE = 48
 
 # マップデータ（W: 壁, F: 床, G: ゴール, C: コイン）
 MAP_DATA = [

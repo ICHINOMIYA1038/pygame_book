@@ -1,0 +1,134 @@
+version: "3"
+
+tasks:
+  install:
+    desc: 仮想環境をセットアップして依存関係をインストール
+    cmds:
+      - python3 -m venv venv
+      - ./venv/bin/pip install --upgrade pip
+      - ./venv/bin/pip install -r requirements.txt
+    sources:
+      - requirements.txt
+    generates:
+      - venv/pyvenv.cfg
+
+  clean:
+    desc: 仮想環境を削除
+    cmds:
+      - rm -rf venv
+
+  reinstall:
+    desc: 仮想環境を再作成
+    cmds:
+      - task: clean
+      - task: install
+
+  run:
+    desc: 最終完成版のゲームを実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python main.py
+
+  run01:
+    desc: 第1章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 01.py
+
+  run02:
+    desc: 第2章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 02.py
+
+  run03:
+    desc: 第3章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 03.py
+
+  run04:
+    desc: 第4章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 04.py
+
+  run05:
+    desc: 第5章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 05.py
+
+  run06:
+    desc: 第6章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 06.py
+
+  run07:
+    desc: 第7章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 07.py
+
+  run08:
+    desc: 第8章を実行
+    deps: [install]
+    cmds:
+      - ./venv/bin/python 08.py
+
+  list:
+    desc: 利用可能な章を一覧表示
+    cmds:
+      - echo "利用可能な章:"
+      - echo "  task run01  - 第1章 基本移動"
+      - echo "  task run02  - 第2章 マップと床"
+      - echo "  task run03  - 第3章 壁と衝突判定"
+      - echo "  task run04  - 第4章 ゴール判定"
+      - echo "  task run05  - 第5章 より大きなマップ"
+      - echo "  task run06  - 第6章 敵キャラクター"
+      - echo "  task run07  - 第7章 コインとスコア"
+      - echo "  task run08  - 第8章 サウンドとエフェクト"
+      - echo "  task run    - 最終完成版"
+
+  test:
+    desc: 全てのファイルの文法チェック
+    deps: [install]
+    cmds:
+      - ./venv/bin/python -m py_compile *.py
+      - echo "全てのPythonファイルの文法チェックが完了しました"
+
+  requirements:
+    desc: requirements.txtを更新
+    deps: [install]
+    cmds:
+      - ./venv/bin/pip freeze > requirements.txt
+
+  help:
+    desc: 使用方法を表示
+    cmds:
+      - echo "=== Pygame迷路ゲーム タスク一覧 ==="
+      - echo ""
+      - echo "セットアップ:"
+      - echo "  task install     - 仮想環境をセットアップ"
+      - echo "  task clean       - 仮想環境を削除"
+      - echo "  task reinstall   - 仮想環境を再作成"
+      - echo ""
+      - echo "実行:"
+      - echo "  task run         - 最終完成版を実行"
+      - echo "  task run01       - 第1章を実行"
+      - echo "  task run02       - 第2章を実行"
+      - echo "  task run03       - 第3章を実行"
+      - echo "  task run04       - 第4章を実行"
+      - echo "  task run05       - 第5章を実行"
+      - echo "  task run06       - 第6章を実行"
+      - echo "  task run07       - 第7章を実行"
+      - echo "  task run08       - 第8章を実行"
+      - echo "  task list        - 利用可能な章を表示"
+      - echo ""
+      - echo "開発:"
+      - echo "  task test        - 文法チェック"
+      - echo "  task requirements - requirements.txt更新"
+
+  default:
+    deps: [help]
