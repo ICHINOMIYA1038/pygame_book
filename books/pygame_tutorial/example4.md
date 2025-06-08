@@ -41,7 +41,7 @@ if __name__=="__main__":
 
 これで黒い画面に赤い色の円が作成されます。
 
-![赤い円の作成](/images/pygame_tutorial/01.png)
+![赤い円の作成](/pygame_tutorial/images/pygame_tutorial/01.png)
 
 コードを読んで、以下の問題を解いてみましょう
 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
 このようにキーボードが押されているかどうかが、keys という配列で取得されているのです。
 押されている場合には、keys[pygame.K_UP] が true になり 押されていない時には false になります。
 
-![pygameのチュートリアル](/images/pygame_tutorial/02.png)
+![pygameのチュートリアル](/pygame_tutorial/images/pygame_tutorial/02.png)
 
 これを元に赤い円を動かすコードを書いてみましょう。書き終わったら、以下のお手本のコードと見比べてみてください。
 
@@ -271,7 +271,7 @@ if __name__ == "__main__":
     main()
 ```
 
-![pygameのチュートリアル](/images/pygame_tutorial/04.png)
+![pygameのチュートリアル](/pygame_tutorial/images/pygame_tutorial/04.png)
 
 ### コードを整理する。
 
@@ -454,7 +454,7 @@ if __name__ == "__main__":
     main()
 ```
 
-![pygameのチュートリアル](/images/pygame_tutorial/06.png)
+![pygameのチュートリアル](/pygame_tutorial/images/pygame_tutorial/06.png)
 
 これでランダムで敵が出てくるようになりました。
 まだ、ぶつかってもゲームオーバーにはなりません。
@@ -599,7 +599,7 @@ if __name__ == "__main__":
 これで player の位置から炎を出せるようになりました。
 しかし、まだ当たり判定がないので敵を倒すことはできません。
 
-![pygameのチュートリアル](/images/pygame_tutorial/07.png)
+![pygameのチュートリアル](/pygame_tutorial/images/pygame_tutorial/07.png)
 
 ### 当たり判定とスコアを実装
 
@@ -809,7 +809,7 @@ if __name__ == "__main__":
 これで最低限のシューティングゲームが完成しました。
 敵を増やしたり、難易度を調整したり自分で工夫して遊んでみましょう。
 
-![pygameのチュートリアル](/images/pygame_tutorial/08.png)
+![pygameのチュートリアル](/pygame_tutorial/images/pygame_tutorial/08.png)
 
 ## 参考ドキュメント
 
