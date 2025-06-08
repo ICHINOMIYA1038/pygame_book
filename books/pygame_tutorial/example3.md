@@ -182,7 +182,11 @@ if __name__=="__main__":
 
 以下のようなグラフが出てきたら成功。Python を使うとこのようなデータ分析が簡単にできます。便利な機能を簡単に扱えるようになるのが外部ライブラリです。
 
-![スクリーンショット 2025-01-02 3.03.59](/Users/ichinomiya/Library/Application Support/typora-user-images/スクリーンショット 2025-01-02 3.03.59.png)
+![グラフのサンプル画像](./images/sample_graph.png)
+
+:::message
+グラフの画像は実際に実行した結果を保存して配置してください。
+:::
 
 ## 基本的な文法
 
@@ -210,7 +214,7 @@ def greet():
 関数には最初に値を渡すことができます。以下は、動物の名前を渡すことで、その動物の名前を関数の中で使うことができます。このとき、渡した値のことを引数といいます。
 
 ```python
-# 好きな動物を説明する関数
+# 好きな動物を説明する関数（引数の例）
 def greet(animal):
     print("私は" + animal + "が好きです!")
 
@@ -226,12 +230,12 @@ if __name__=="__main__":
 関数は特定の値を返すことができます。返すとは、その関数の実行結果がその特定の値になることを言います。この特定の値を帰り値といいます。
 
 ```python
-# 好きな動物を説明する関数
-def greet(animal):
+# 好きな動物を説明する関数（帰り値の例）
+def greet_with_return(animal):
     return ("私は" + animal + "が好きです!") # 帰り値
 
 def main():
-    answer = greet("ワニ") # greet("ワニ")に自己紹介の文章が返ってきている。
+    answer = greet_with_return("ワニ") # greet_with_return("ワニ")に自己紹介の文章が返ってきている。
     print(answer)
 
 if __name__=="__main__":

@@ -42,7 +42,11 @@ pygame でゲームを作る前に、知っておくべきコンピュータの�
 例えば、デスクトップにある猫の画像(`neko.jpg`)のパスは以下のようになります。
 
 ```shell
-/Users/desktop/neko.jpg
+# Mac の場合
+/Users/[ユーザー名]/Desktop/neko.jpg
+
+# Windows の場合
+C:\Users\[ユーザー名]\Desktop\neko.jpg
 ```
 
 ### 絶対パスと相対パス
@@ -54,8 +58,13 @@ pygame でゲームを作る前に、知っておくべきコンピュータの�
 絶対パスとは初めから最後までの全ての住所です。
 
 ```shell
-C:/写真/旅行/富士山.jpg
-C:/写真/8月/旅行/富士山.jpg
+# Windows の場合
+C:\写真\旅行\富士山.jpg
+C:\写真\8月\旅行\富士山.jpg
+
+# Mac の場合
+/Users/[ユーザー名]/写真/旅行/富士山.jpg
+/Users/[ユーザー名]/写真/8月/旅行/富士山.jpg
 ```
 
 相対パスとは今いる場所を基準にした住所です。
@@ -97,13 +106,13 @@ Scratch を使ってゲームを作成することに慣れていると、ゲー
 カレントディレクトリを知るためのコマンド
 
 ```shell
+# Mac の場合
 pwd
-```
 
-Windows の場合は
-
-```shell
-@cd
+# Windows の場合
+cd
+# または
+echo %cd%
 ```
 
 ### cd コマンド
@@ -115,10 +124,10 @@ cd
 ### ls コマンド
 
 ```shell
-[mac]
+# Mac の場合
 ls
 
-[windows]
+# Windows の場合
 dir
 ```
 
@@ -131,7 +140,13 @@ mkdir test
 ここまできたら、デスクトップに自分で`mypython` ディレクトリを作成しましょう
 
 ```shell
-cd desktop
+# Mac の場合
+cd Desktop
+mkdir mypython
+cd mypython
+
+# Windows の場合
+cd Desktop
 mkdir mypython
 cd mypython
 ```
@@ -149,11 +164,14 @@ cd mypython
 ### touch コマンド
 
 ```shell
-[mac]
+# Mac の場合
 touch main.py
 
-[windows]
+# Windows の場合（コマンドプロンプト）
 type nul > main.py
+
+# Windows の場合（PowerShell）
+New-Item -ItemType File -Name main.py
 ```
 
 改めて ls コマンドを実行すると、`main.py` が作成されています。
@@ -170,9 +188,6 @@ VSCode で mypython ディレクトリを開きます。
 print("Hello, World!")
 ```
 
-![スクリーンショット 2025-01-01 19.25.29](/Users/ichinomiya/Library/Application Support/typora-user-images/スクリーンショット 2025-01-01 19.25.29.png)
-_VSCode でのファイル確認_
-
 ここで、Python のコードを実行する方法を説明します。
 
 Python のコードは実行する方法が二種類あります。
@@ -185,10 +200,7 @@ Python のコードは実行する方法が二種類あります。
 
    とコマンドを入力して実行してください。
 
-   すると、以下のように簡単なプログラムを実行できるようになります。
-
-![スクリーンショット 2025-01-01 19.22.41](/Users/ichinomiya/Library/Application Support/typora-user-images/スクリーンショット 2025-01-01 19.22.41.png)
-_対話モードでの実行例_
+   すると、簡単なプログラムを実行できるようになります。
 
 2. ファイルの実行
 
@@ -198,7 +210,7 @@ _対話モードでの実行例_
 
    で実行します。
 
-先ほど書いた `Hello, world `が表示されていれば成功です。
+先ほど書いた `Hello, World!` が表示されていれば成功です。
 
 もし実行されない場合にはパスがあっているか確認しましょう。
 
