@@ -63,3 +63,17 @@ task help
 - Slug naming rules: 12-50 characters using only a-z, 0-9, -, _
 - Slugs cannot be changed once published on zenn.dev
 - Books can be free (price: 0) or paid (200-5000)
+
+## Custom Slash Commands
+
+### /screenshot
+プログラムを実行してスクリーンショットを撮影するコマンド。
+
+使用例:
+```
+/screenshot python main.py -o images/game.png
+/screenshot npm run dev -d 5 -o preview.png
+/screenshot python app.py -f -o fullscreen.png
+```
+
+詳細は `.claude/screenshot.md` を参照。

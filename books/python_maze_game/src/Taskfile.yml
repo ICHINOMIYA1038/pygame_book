@@ -26,7 +26,7 @@ tasks:
     desc: 最終完成版のゲームを実行
     deps: [install]
     cmds:
-      - uv run python main.py
+      - nohup uv run python main.py &
 
   run01:
     desc: 第1章を実行
