@@ -4,18 +4,17 @@ tasks:
   install:
     desc: 仮想環境をセットアップして依存関係をインストール
     cmds:
-      - python3 -m venv venv
-      - ./venv/bin/pip install --upgrade pip
-      - ./venv/bin/pip install -r requirements.txt
+      - uv venv
+      - uv sync
     sources:
-      - requirements.txt
+      - pyproject.toml
     generates:
-      - venv/pyvenv.cfg
+      - .venv/pyvenv.cfg
 
   clean:
     desc: 仮想環境を削除
     cmds:
-      - rm -rf venv
+      - rm -rf .venv
 
   reinstall:
     desc: 仮想環境を再作成
@@ -27,55 +26,55 @@ tasks:
     desc: 最終完成版のゲームを実行
     deps: [install]
     cmds:
-      - ./venv/bin/python main.py
+      - uv run python main.py
 
   run01:
     desc: 第1章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 01.py
+      - uv run python 01.py
 
   run02:
     desc: 第2章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 02.py
+      - uv run python 02.py
 
   run03:
     desc: 第3章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 03.py
+      - uv run python 03.py
 
   run04:
     desc: 第4章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 04.py
+      - uv run python 04.py
 
   run05:
     desc: 第5章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 05.py
+      - uv run python 05.py
 
   run06:
     desc: 第6章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 06.py
+      - uv run python 06.py
 
   run07:
     desc: 第7章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 07.py
+      - uv run python 07.py
 
   run08:
     desc: 第8章を実行
     deps: [install]
     cmds:
-      - ./venv/bin/python 08.py
+      - uv run python 08.py
 
   list:
     desc: 利用可能な章を一覧表示
@@ -95,14 +94,13 @@ tasks:
     desc: 全てのファイルの文法チェック
     deps: [install]
     cmds:
-      - ./venv/bin/python -m py_compile *.py
+      - uv run python -m py_compile *.py
       - echo "全てのPythonファイルの文法チェックが完了しました"
 
   requirements:
-    desc: requirements.txtを更新
-    deps: [install]
+    desc: requirements.txtを更新（uvでは不要）
     cmds:
-      - ./venv/bin/pip freeze > requirements.txt
+      - echo "uvではpyproject.tomlで依存関係を管理します"
 
   help:
     desc: 使用方法を表示

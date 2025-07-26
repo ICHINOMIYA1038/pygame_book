@@ -1,0 +1,11 @@
+[project]
+name = "python-maze-game"
+version = "1.0.0"
+description = "Python maze game tutorial with pygame"
+requires-python = ">=3.8"
+dependencies = [
+    "pygame>=2.0.0",
+]
+
+[tool.uv]
+dev-dependencies = []
