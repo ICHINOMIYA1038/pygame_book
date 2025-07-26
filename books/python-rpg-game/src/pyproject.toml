@@ -1,0 +1,21 @@
+[project]
+name = "python-rpg-game"
+version = "0.1.0"
+description = "小学生向けPython RPGゲームチュートリアル"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pygame>=2.5.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,92 @@
+version: "3"
+
+tasks:
+  # セットアップ
+  install:
+    desc: 仮想環境を作成
+    cmds:
+      - uv venv
+      - echo "✅ 仮想環境を作成しました"
+
+  # 各章の実行
+  run01:
+    desc: 第1章を実行 - 勇者の名前を決めよう
+    deps: [install]
+    cmds:
+      - uv run python 01_rpg_start_pygame.py
+
+  run02:
+    desc: 第2章を実行 - スライムと戦おう
+    deps: [install]
+    cmds:
+      - uv run python 02_battle_pygame.py
+
+  run03:
+    desc: 第3章を実行 - 複数の敵と連続バトル
+    deps: [install]
+    cmds:
+      - uv run python 03_multiple_battles_pygame.py
+
+  run04:
+    desc: 第4章を実行 - 魔法を使おう
+    deps: [install]
+    cmds:
+      - uv run python 04_magic_pygame.py
+
+  run05:
+    desc: 第5章を実行 - アイテムを使おう
+    deps: [install]
+    cmds:
+      - uv run python 05_items_pygame.py
+
+  run06:
+    desc: 第6章を実行 - レベルアップシステム
+    deps: [install]
+    cmds:
+      - uv run python 06_levelup_pygame.py
+
+  run07:
+    desc: 第7章を実行 - ダンジョン探索（未実装）
+    deps: [install]
+    cmds:
+      - echo "第7章はまだ実装されていません"
+
+  run08:
+    desc: 第8章を実行 - 完成版RPGゲーム（未実装）
+    deps: [install]
+    cmds:
+      - echo "第8章はまだ実装されていません"
+
+  # 最終版の実行
+  run:
+    desc: 第6章（レベルアップシステム）を実行
+    deps: [install]
+    cmds:
+      - uv run python 06_levelup_pygame.py
+
+  # 開発用コマンド
+  test:
+    desc: コードの構文チェック
+    deps: [install]
+    cmds:
+      - uv run ruff check .
+
+  format:
+    desc: コードのフォーマット
+    deps: [install]
+    cmds:
+      - uv run ruff format .
+
+  clean:
+    desc: 仮想環境をクリーンアップ
+    cmds:
+      - rm -rf .venv
+      - rm -rf __pycache__
+      - rm -rf .ruff_cache
+      - echo "✅ クリーンアップ完了"
+
+  # ヘルプ
+  help:
+    desc: 利用可能なタスクを表示
+    cmds:
+      - task --list-all
