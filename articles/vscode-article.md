@@ -3,11 +3,12 @@ title: "VSCodeの見た目を好きなアニメのテーマカラーにカスタ
 emoji: "⚡"
 type: "tech"
 topics: ["vscode", "theme", "extension", "tips"]
-published: false
+published: true
+publication_name: counterworks
 ---
 
 :::message
-この記事は「COUNTER WORKS Advent Calendar 2025」の 15 日目の記事です。
+この記事は「[COUNTER WORKS Advent Calendar 2025](https://adventar.org/calendars/12192)」の 15 日目の記事です。
 :::
 
 ## はじめに
