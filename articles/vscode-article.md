@@ -89,6 +89,8 @@ VSCode の設定画面から `workbench.colorCustomizations` を検索
 }
 ```
 
+![タイトルバーが赤くなった例](/images/vscode-titlebar-red.png)
+
 このようにテーマカラーに関しては、**`setting.json` を変更するだけで変更できる**ことがわかります。
 これは、私が冒頭に述べた Claude Code にやらせていた方法ですね。
 
@@ -228,10 +230,10 @@ https://code.visualstudio.com/api/references/theme-color
 
 シンタックスハイライトの色については**二つの方法**があります。
 
-1. `.tmTheme` を使ってテーマ自体を変える方法
+1. `-color-theme.json` を使ってテーマ自体を変える方法
 2. `editor.tokenColorCustomizations` を使ってテーマを上から部分的に変える方法
 
-今回はテーマの自作ですので、`.tmTheme` の変更を考えますが、参考までに `editor.tokenColorCustomizations` の方法も紹介します。
+今回はテーマの自作ですので、`-color-theme.json` の変更を考えますが、参考までに `editor.tokenColorCustomizations` の方法も紹介します。
 
 ### editor.tokenColorCustomizations でテーマを上書きする
 
@@ -250,7 +252,7 @@ https://code.visualstudio.com/api/references/theme-color
 
 ### シンタックスハイライトの仕組み
 
-tmTheme を変える前にシンタックスハイライトの説明をさせてください。
+テーマファイルを変える前にシンタックスハイライトの説明をさせてください。
 
 シンタックスハイライトは、特定のキーワードに色をつける仕組みです。
 
@@ -605,6 +607,13 @@ yes / no で質問が聞かれるので、お好みで設定します。
 
 いかがだったでしょうか。今回の内容は AI とは直接関係がありませんが、**AI を使いこなすためには遊び心が大事**だと思っています。
 今回のような遊びは AI があるからこそできる研究でした。ぜひ皆さんも自分だけのカラーテーマを作ってみてください！
+
+## 参考文献
+
+- [VS Code Color Theme Guide（公式）](https://code.visualstudio.com/api/extension-guides/color-theme)
+- [Theme Color Reference（公式）](https://code.visualstudio.com/api/references/theme-color)
+- [TextMate Language Grammars](https://macromates.com/manual/en/language_grammars)
+- [VSCode拡張機能でシンタックスハイライトを作る（カヤック）](https://techblog.kayac.com/vscode-extension-syntax-highlight)
 
 ## We are hiring!!
 
