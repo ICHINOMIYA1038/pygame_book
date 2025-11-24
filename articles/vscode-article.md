@@ -7,7 +7,7 @@ published: false
 ---
 
 :::message
-この記事は「COUNTER WORKS Advent Calendar 2025」の 10 日目の記事です。
+この記事は「COUNTER WORKS Advent Calendar 2025」の 15 日目の記事です。
 :::
 
 ## はじめに
@@ -613,7 +613,7 @@ yes / no で質問が聞かれるので、お好みで設定します。
 - [VS Code Color Theme Guide（公式）](https://code.visualstudio.com/api/extension-guides/color-theme)
 - [Theme Color Reference（公式）](https://code.visualstudio.com/api/references/theme-color)
 - [TextMate Language Grammars](https://macromates.com/manual/en/language_grammars)
-- [VSCode拡張機能でシンタックスハイライトを作る（カヤック）](https://techblog.kayac.com/vscode-extension-syntax-highlight)
+- [VSCode 拡張機能でシンタックスハイライトを作る（カヤック）](https://techblog.kayac.com/vscode-extension-syntax-highlight)
 
 ## We are hiring!!
 
