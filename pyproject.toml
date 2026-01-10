@@ -1,0 +1,17 @@
+[project]
+name = "zenn-books"
+version = "0.1.0"
+description = "Zenn books repository - Python tutorials"
+requires-python = ">=3.10"
+dependencies = [
+    "pygame>=2.0.0",
+    "numpy",
+    "pandas",
+    "matplotlib",
+]
+
+[project.scripts]
+maze-game = "books.python_maze_game.src.main:main"
+
+[tool.uv]
+dev-dependencies = []

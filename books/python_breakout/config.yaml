@@ -1,0 +1,11 @@
+title: "pygameでブロック崩しを作ろう"
+summary: "Pythonの基礎を学びながらブロック崩しゲームを作る入門チュートリアル"
+topics: ["pygame", "ブロック崩し", "ゲーム制作", "Python入門"]
+published: false
+price: 0
+chapters:
+  - "01"
+  - "02"
+  - "03"
+  - "04"
+  - "05"
